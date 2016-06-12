@@ -6724,3 +6724,12 @@ button.close {
     display: none !important;
   }
 }
+.widgets-list {
+  padding: 0;
+}
+.widgets-list > li {
+  list-style: none;
+}
+.test {
+  color: pink;
+}

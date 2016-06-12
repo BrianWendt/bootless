@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/include.php';
 require_once __DIR__ . '/lib/Bootless.php';
+require_once __DIR__ . '/lib/BootlessSettings.php';
 
 add_action('after_setup_theme', 'blankslate_setup');
 
@@ -95,3 +96,6 @@ function wpt_setup() {
 }
 
 require_once __DIR__ . DIRECTORY_SEPARATOR . 'lib' . DIRECTORY_SEPARATOR . 'wp_bootstrap_navwalker.php';
+
+if (is_admin())
+    $my_settings_page = new BootlessSettings();

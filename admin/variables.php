@@ -6,9 +6,8 @@ function less_var($name){
 }
 ?>
 
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-
-<div class="bs-docs-section" id="less-variables-section">
+<div class="bs">
     <?php include __DIR__ . DS . 'variables.form.php'; ?>
 </div>
+
+<link href="<?php echo get_template_directory_uri() ?>/admin/bootstrap.css" rel="stylesheet" />
