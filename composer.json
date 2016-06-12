@@ -1,0 +1,21 @@
+{
+    "repositories": {
+        "wp-bootstrap-navwalker": {
+            "type": "package",
+            "package": {
+                "name": "twittem/wp-bootstrap-navwalker",
+                "version": "1.0.0",
+                "source": {
+                    "url": "https://github.com/twittem/wp-bootstrap-navwalker",
+                    "type": "git"
+                }
+            }
+        }
+    },
+    "require": {
+        "oyejorge/less.php": "~1.7.0.9",
+        "twbs/bootstrap": "^3.3",
+        "twittem/wp-bootstrap-navwalker": "1.0.0"
+
+    }
+}
