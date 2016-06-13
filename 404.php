@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <div class="row">
-    <div class="col-md-9">
+    <div class="<?php echo Bootless::option('content_class') ?>">
         <section id="content" role="main">
             <article id="post-0" class="post not-found">
                 <header class="header">
@@ -13,7 +13,7 @@
             </article>
         </section>
     </div>
-    <div class="col-md-3">
+    <div class="<?php echo Bootless::option('sidebar_class') ?>">
         <?php get_sidebar(); ?>
     </div>
 </div>

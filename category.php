@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <div class="row">
-    <div class="col-md-9">
+    <div class="<?php echo Bootless::option('content_class') ?>">
         <section id="content" role="main">
             <header class="header">
                 <h1 class="entry-title"><?php _e('Category Archives: ', 'blankslate'); ?><?php single_cat_title(); ?></h1>
@@ -15,7 +15,7 @@
             <?php get_template_part('nav', 'below'); ?>
         </section>
     </div>
-    <div class="col-md-3">
+    <div class="<?php echo Bootless::option('sidebar_class') ?>">
         <?php get_sidebar(); ?>
     </div>
 </div>
