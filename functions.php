@@ -1,7 +1,6 @@
 <?php
 require_once __DIR__ . '/include.php';
 require_once __DIR__ . '/lib/Bootless.php';
-require_once __DIR__ . '/lib/BootlessSettings.php';
 
 add_action('after_setup_theme', 'blankslate_setup');
 
@@ -84,6 +83,7 @@ function blankslate_comments_number($count) {
 
 function bootless_scripts() {
     wp_enqueue_style('bootless', get_template_directory_uri() . '/css/bootstrap.css');
+    wp_enqueue_script('bootstrap', get_template_directory_uri() . '/vendor/twbs/bootstrap/dist/js/bootstrap.min.js');
     //wp_enqueue_script( 'script-name', get_template_directory_uri() . '/js/example.js', array(), '1.0.0', true );
 }
 
@@ -97,5 +97,22 @@ function wpt_setup() {
 
 require_once __DIR__ . DIRECTORY_SEPARATOR . 'lib' . DIRECTORY_SEPARATOR . 'wp_bootstrap_navwalker.php';
 
-if (is_admin())
-    $my_settings_page = new BootlessSettings();
+if (is_admin()) {
+    require_once __DIR__ . '/lib/BootlessController.php';
+    add_action('admin_menu', 'add_bootless_menu');
+
+    function add_bootless_menu() {
+        $Controller = new BootlessController();
+        $capability = 'manage_options';
+        add_menu_page('Bootless Theme Settings', 'Theme Settings', $capability, 'bootless', [$Controller, 'settings'], 'dashicons-admin-customizer', 61);
+    }
+
+}
+
+function boolChecked($bool){
+    return ($bool) ? 'checked' : '';
+}
+
+function boolSelected($bool){
+    return ($bool) ? 'selected' : '';
+}

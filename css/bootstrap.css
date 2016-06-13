@@ -6730,6 +6730,7 @@ button.close {
 .widgets-list > li {
   list-style: none;
 }
-.test {
-  color: pink;
+/* Admin Elements */
+.wp-admin .form-group {
+  border-bottom: 1px solid #888;
 }

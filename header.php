@@ -9,8 +9,9 @@
     </head>
     <body <?php body_class(); ?>>
         <div id="wrapper">
+            <?php if (Bootless::option('nav_position') == 'top') include Bootless::element('header', 'main-menu'); ?>
             <header id="header" role="banner" class="container">
                 <?php include Bootless::element('header', 'branding'); ?>
-                <?php include Bootless::element('header', 'main-menu'); ?>
             </header>
+            <?php if (Bootless::option('nav_position') == 'branding') include Bootless::element('header', 'main-menu'); ?>
             <div id="container" class="container">
