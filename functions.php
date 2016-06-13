@@ -105,14 +105,23 @@ if (is_admin()) {
         $Controller = new BootlessController();
         $capability = 'manage_options';
         add_menu_page('Bootless Theme Settings', 'Theme Settings', $capability, 'bootless', [$Controller, 'settings'], 'dashicons-admin-customizer', 61);
+        add_submenu_page('bootless', 'Customize Bootstrap', 'Customize Bootstrap', $capability, 'bootless_variables', [$Controller, 'variables']);
     }
 
 }
 
-function boolChecked($bool){
+function boolChecked($bool) {
     return ($bool) ? 'checked' : '';
 }
 
-function boolSelected($bool){
+function boolSelected($bool) {
     return ($bool) ? 'selected' : '';
+}
+
+function bootless_comment_form() {
+    $args = [
+        'comment_field' => '<p class="comment-form-comment form-group"><label for="comment">' . _x('Comment', 'noun') . '</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" class="form-control"></textarea></p>',
+        'class_submit' => 'btn btn-primary'
+    ];
+    comment_form($args);
 }
