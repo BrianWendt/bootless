@@ -10,7 +10,7 @@ class BootlessController {
     }
 
     public function variables() {
-        if (is_file(file_get_contents(BOOTLESS . 'css/custom.less'))) {
+        if (is_file(BOOTLESS . 'css/custom.less')) {
             $custom = file_get_contents(BOOTLESS . 'css/custom.less');
         } else {
             $custom = '';
