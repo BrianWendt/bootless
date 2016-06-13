@@ -10,7 +10,11 @@ class BootlessController {
     }
 
     public function variables() {
-        $custom = file_get_contents(BOOTLESS . 'css/custom.less');
+        if (is_file(file_get_contents(BOOTLESS . 'css/custom.less'))) {
+            $custom = file_get_contents(BOOTLESS . 'css/custom.less');
+        } else {
+            $custom = '';
+        }
         if (!empty($_POST)) {
             Bootless::variablesSave($_POST['var']);
             $custom = $_POST['custom'];
