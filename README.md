@@ -12,8 +12,10 @@ framework. A PHP LESS compiler is included with the theme
 ## Documentation
 Bootstrap documentation can be found at
 [http://getbootstrap.com](http://getbootstrap.com) and Bootless documentation
-can be found at [bootless.ontodevelopment.com](bootless.ontodevelopment.com).
+can be found at the [Wiki](https://github.com/BrianWendt/bootless/wiki).
 
+News, updates, and tips can be found at
+[bootless.ontodevelopment.com](bootless.ontodevelopment.com).
 ## COPYRIGHT & LICENSE
 
 © 2016 OntoDevelopment.com
