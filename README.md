@@ -5,4 +5,4 @@ This theme utilizes Twitter Bootstrap to provide a easy to customize solution to
 ## COPYRIGHT & LICENSE
 
 © 2016 OntoDevelopment.com
-GNU General Public License | https://www.gnu.org/licenses/gpl.html
+[GNU General Public License](https://www.gnu.org/licenses/gpl.html)
