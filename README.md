@@ -1,5 +1,4 @@
 # Bootless WordPress Theme
-
 This theme utilizes Twitter [Bootstrap](http://getbootstrap.com) to provide a
 easy to customize solution to front-end developers. Bootless is not intended for
 end-user customization, rather it has been developed to provide a starting point
@@ -16,6 +15,12 @@ can be found at the [Wiki](https://github.com/BrianWendt/bootless/wiki).
 
 News, updates, and tips can be found at
 [bootless.ontodevelopment.com](bootless.ontodevelopment.com).
+
+## Collaborators Wanted
+If you are interested in becoming a Collaborator on the Bootless project simply
+start a branch of your own. I will try and follow all branches and consider
+authors for becoming a Bootless Collaborator.
+
 ## COPYRIGHT & LICENSE
 
 © 2016 OntoDevelopment.com
