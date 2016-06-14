@@ -13,9 +13,9 @@
                         <div class="paginated-comments-links"><?php paginate_comments_links(); ?></div>
                     </nav>
                 <?php endif; ?>
-                <ul>
-                    <?php wp_list_comments('type=comment'); ?>
-                </ul>
+                <div class="comments-list">
+                    <?php wp_list_comments('type=comment&callback=bootless_comment'); ?>
+                </div>
                 <?php if (get_comment_pages_count() > 1) : ?>
                     <nav id="comments-nav-below" class="comments-navigation" role="navigation">
                         <div class="paginated-comments-links"><?php paginate_comments_links(); ?></div>
@@ -28,9 +28,9 @@
             $ping_count = count($comments_by_type['pings']);
             ?>
             <section id="trackbacks-list" class="comments">
-                <h3 class="comments-title"><?php echo '<span class="ping-count">' . $ping_count . '</span> ' . ( $ping_count > 1 ? __('Trackbacks', 'blankslate') : __('Trackback', 'blankslate') ); ?></h3>
+                <h3 class="comments-title"><?php echo '<span class="ping-count">' . $ping_count . '</span> ' . ( $ping_count > 1 ? __('Trackbacks', 'bootless') : __('Trackback', 'bootless') ); ?></h3>
                 <ul>
-                    <?php wp_list_comments('type=pings&callback=blankslate_custom_pings'); ?>
+                    <?php wp_list_comments('type=pings&callback=bootless_custom_pings'); ?>
                 </ul>
             </section>
             <?php

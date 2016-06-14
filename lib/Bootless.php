@@ -2,14 +2,8 @@
 
 class Bootless {
 
-    
     static $options = null;
     static $variables = null;
-    static $nav_positions = [
-        'top' => 'Top',
-        'branding' => 'Below Branding'
-    ];
-    
 
     static function element($type, $name) {
         return BOOTLESS . 'elements' . DS . $type . DS . $name . '.php';
@@ -42,7 +36,7 @@ class Bootless {
         $variables = self::variables();
         return isset($variables[$name]) ? $variables[$name] : self::variableDefault($name, $default);
     }
-    
+
     static function variableDefault($name, $default = '') {
         return isset(self::$default_variables[$name]) ? self::$default_variables[$name] : $default;
     }
@@ -54,22 +48,37 @@ class Bootless {
         }
         return self::$variables;
     }
-    
+
     static function variablesSave($variables = false) {
         $variables_str = json_encode(($variables) ? $variables : self::$variables);
         update_option('bootless_variables', $variables_str);
         self::$variables = $variables;
     }
-    
+
     static $default_options = [
         'nav_position' => 'top',
-        'nav_sticky' => 0,
-        'nav_contain' => 1,
+        'nav_mode' => 'fluid-contian',
         'content_class' => 'col-md-9',
         'sidebar' => 1,
-        'sidebar_class' => 'col-md-3'
+        'sidebar_class' => 'col-md-3',
+        'featured_position' => 'above-title',
+        'featured_index' => 1,
+        'featured_single' => 1,
     ];
-    
+    static $featured_positions = [
+        'above-title' => 'Above Post Title',
+        'below-title' => 'Below Post Title'
+    ];
+    static $nav_positions = [
+        'top' => 'Top',
+        'top-sticky' => 'Fixed to Top',
+        'branding' => 'Below Branding'
+    ];
+    static $nav_modes = [
+        'fluid-contain' => 'Full Width and Centered',
+        'fluid' => 'Full Width',
+        'contain' => 'Centered'
+    ];
     static $default_variables = [
         "@gray-base" => "#000",
         "@gray-darker" => "lighten(@gray-base, 13.5%)",

@@ -5,13 +5,13 @@
             <header class="header">
                 <h1 class="entry-title"><?php
                     if (is_day()) {
-                        printf(__('Daily Archives: %s', 'blankslate'), get_the_time(get_option('date_format')));
+                        printf(__('Daily Archives: %s', 'bootless'), get_the_time(get_option('date_format')));
                     } elseif (is_month()) {
-                        printf(__('Monthly Archives: %s', 'blankslate'), get_the_time('F Y'));
+                        printf(__('Monthly Archives: %s', 'bootless'), get_the_time('F Y'));
                     } elseif (is_year()) {
-                        printf(__('Yearly Archives: %s', 'blankslate'), get_the_time('Y'));
+                        printf(__('Yearly Archives: %s', 'bootless'), get_the_time('Y'));
                     } else {
-                        _e('Archives', 'blankslate');
+                        _e('Archives', 'bootless');
                     }
                     ?></h1>
             </header>

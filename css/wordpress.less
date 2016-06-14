@@ -1,15 +1,43 @@
+.entry-title a {
+    color: @text-color;
+}
 .widgets-list {
     padding: 0;
 }
 .widgets-list > li {
     list-style: none;
 }
-#comments-list li {
-    list-style: none;
-}
+
 .entry-meta {
-    .well;
-    .well-sm;
+    .panel-body;
+}
+.author-avatar {
+    .pull-left;
+    padding-right: @padding-small-vertical;
+}
+.author-avatar .avatar {
+    height: ceil(@line-height-computed * 2);
+    width: auto;
+}
+.entry-footer {
+    .small;
+    .panel-body;
+}
+.comment {
+    .panel;
+    .panel-default;
+}
+.comment-heading {
+    .panel-heading;
+}
+.comment-body {
+    .panel-body;
+}
+.comment-footer {
+    .panel-footer;
+}
+.comment-meta {
+    .pull-right;
 }
 
 /* Admin Elements */

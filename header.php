@@ -8,7 +8,7 @@
         <?php wp_head(); ?>
     </head>
     <body <?php body_class(); ?>>
-        <div id="wrapper" class="<?php echo BOOTLESS::option('nav_sticky') ? 'nav_sticky' : '' ?>">
+        <div id="wrapper" class="<?php echo (strpos(Bootless::option('nav_position'), 'sticky') !== false) ? 'nav_sticky' : '' ?>">
             <?php if (strpos(Bootless::option('nav_position'), 'top') !== false) include Bootless::element('header', 'main-menu'); ?>
             <header id="header" role="banner" class="container">
                 <?php include Bootless::element('header', 'branding'); ?>

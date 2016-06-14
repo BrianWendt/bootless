@@ -20,56 +20,53 @@
                     </select>
                 </div>
             </div>
-            
+
             <div class="form-group">
                 <label class="control-label col-md-2 col-sm-3">
-                    Sticky Navigation Bar:
+                    Navigation Bar Mode:
                 </label>
                 <div class="col-md-4 col-sm-9">
-                    <label class="radio">
-                        <input type="radio" name="option[nav_sticky]" value="1" <?php echo boolChecked(Bootless::option('nav_sticky') == 1) ?> /> Enabled *
-                    </label>
-                    <label class="radio">
-                        <input type="radio" name="option[nav_sticky]" value="0" <?php echo boolChecked(Bootless::option('nav_sticky') != 1) ?> /> Disabled
-                    </label>
+                    <select name="option[nav_mode]" class="form-control">
+                        <?php
+                        foreach (Bootless::$nav_modes as $mode => $label) {
+                            echo '<option value="' . $mode . '" ' . boolSelected(Bootless::option('nav_mode') == $mode) . '>' . $label . '</option>';
+                        }
+                        ?>
+                    </select>
                 </div>
-                <div class="col-md-6 col-sm-12">
-                    <p class="help-block">This will toggle whether the navigation bar sticks to the top as you scroll.</p>
-                    <p class="help-block">* Enabling <b>Stick Navigation Bar</b> will override <b>Navigation Bar Position</b>.</p>
-                </div>
-                
             </div>
-            
             <div class="form-group">
                 <label class="control-label col-md-2 col-sm-3">
-                    Contain Navigation Bar:
+                    Navigation Bar Branding:
                 </label>
                 <div class="col-md-4 col-sm-9">
-                    <label class="radio">
-                        <input type="radio" name="option[nav_contain]" value="1" <?php echo boolChecked(Bootless::option('nav_contain') == 1) ?> /> Enabled
-                    </label>
-                    <label class="radio">
-                        <input type="radio" name="option[nav_contain]" value="0" <?php echo boolChecked(Bootless::option('nav_contain') != 1) ?> /> Disabled
-                    </label>
+                    <input type="text" name="option[nav_brand]" value="<?php echo Bootless::option('nav_brand') ?>" class="form-control" />
                 </div>
-                <p class="help-block col-md-6 col-sm-12">This will toggle whether the navigation bar is contained or goes to the page edges.</p>
-            </div>
-            <h2>Layout Settings</h2>
-            <div class="form-group">
-                <label class="control-label col-md-2 col-sm-3">
-                    Sidebar:
-                </label>
-                <div class="col-md-4 col-sm-9">
-                    <label class="radio">
-                        <input type="radio" name="option[sidebar]" value="1" <?php echo boolChecked(Bootless::option('sidebar') == 1) ?> /> Enabled
-                    </label>
-                    <label class="radio">
-                        <input type="radio" name="option[sidebar]" value="0" <?php echo boolChecked(Bootless::option('sidebar') != 1) ?> /> Disabled
-                    </label>
-                </div>
-                <p class="help-block col-md-6 col-sm-12">This will toggle whether the sidebar (Primary Widget area) is displayed.</p>
+                <p class="help-block col-md-6 col-sm-12">Leave blank to disable Branding in the Navigation Bar. This field accepts HTML.</p>
             </div>
             <div class="clearfix"></div>
+
+            
+            <h2>Header Branding</h2>
+            <div class="form-group">
+                <label class="control-label col-md-2 col-sm-3">Branding Image</label>
+                <div class="col-md-4 col-sm-9">
+                    <div class="input-group">
+                        <input id="branding_image" type="text" name="option[branding_image]" value="<?php echo Bootless::option('branding_image') ?>" class="form-control"/>
+                        <div class="input-group-btn">
+                            <input id="upload_image_button" class="upload-button btn btn-primary" type="button" value="Upload Image" data-target="#branding_image" />
+                        </div>
+                    </div>
+                </div>
+                <p class="help-block col-md-6 col-sm-12">Enter an URL or upload an image for the banner. Leave blank to use the default header.</p>
+            </div>
+
+            
+            <h2>Layout Settings</h2>
+            <p class="help-block">
+                See <a href="http://getbootstrap.com/css/#grid" target="_blank">Bootstrap 3: Grid system</a> documentation.
+                Tutorials are available at <a href="http://bootless.ontodevelopment.com/layout-customization-overview/" target="_blank">Custom Laces</a>.
+            </p>
             <div class="form-group">
                 <label class="control-label col-md-2 col-sm-3">
                     Content Column Class:
@@ -77,6 +74,7 @@
                 <div class="col-md-4 col-sm-9">
                     <input type="text" name="option[content_class]" value="<?php echo Bootless::option('content_class') ?>" class="form-control" />
                 </div>
+
             </div>
             <div class="form-group">
                 <label class="control-label col-md-2 col-sm-3">
@@ -87,6 +85,48 @@
                 </div>
             </div>
             <div class="clearfix"></div>
+            
+            <h2>Posts</h2>
+            <div class="form-group">
+                <label class="control-label col-md-2 col-sm-3">
+                    Featured Image Position:
+                </label>
+                <div class="col-md-4 col-sm-9">
+                    <select name="option[featured_position]" class="form-control">
+                        <?php
+                        foreach (Bootless::$featured_positions as $featured_position => $label) {
+                            echo '<option value="' . $featured_position . '" ' . boolSelected(Bootless::option('featured_position') == $mode) . '>' . $label . '</option>';
+                        }
+                        ?>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2 col-sm-3">
+                    Featured Image in Lists:
+                </label>
+                <div class="col-md-4 col-sm-9">
+                    <label class="radio-inline">
+                        <input type="radio" name="option[featured_index]" value="1" <?php echo boolChecked(Bootless::option('featured_index') == 1) ?> /> Enabled
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="option[featured_index]" value="0" <?php echo boolChecked(Bootless::option('featured_index') != 1) ?> /> Disabled
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2 col-sm-3">
+                    Featured Image in Single Post:
+                </label>
+                <div class="col-md-4 col-sm-9">
+                    <label class="radio-inline">
+                        <input type="radio" name="option[featured_single]" value="1" <?php echo boolChecked(Bootless::option('featured_single') == 1) ?> /> Enabled
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="option[featured_single]" value="0" <?php echo boolChecked(Bootless::option('featured_single') != 1) ?> /> Disabled
+                    </label>
+                </div>
+            </div>
 
             <button type="submit" class="btn btn-success">Save Theme Settings</button>
         </form>
