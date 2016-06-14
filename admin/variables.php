@@ -23,5 +23,3 @@ function less_var($name) {
         </div>
     </form>
 </div>
-
-<link href="<?php echo get_template_directory_uri() ?>/admin/bootstrap.css" rel="stylesheet" />

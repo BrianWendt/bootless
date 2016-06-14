@@ -116,5 +116,3 @@
         </form>
     </div>
 </div>
-
-<link href="<?php echo get_template_directory_uri() ?>/css/admin_bootstrap.css" rel="stylesheet" />

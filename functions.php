@@ -14,7 +14,7 @@ function bootless_setup() {
     register_nav_menus(
             array('main-menu' => __('Main Menu', 'bootless'))
     );
-    
+
     $custom_header = array(
         'flex-width' => true,
         'width' => $content_width,
@@ -118,9 +118,11 @@ if (is_admin()) {
 
     function bootless_admin_styles() {
         wp_enqueue_style('thickbox');
+        wp_register_style('admin_bootstrap', get_template_directory_uri() . '/css/admin_bootstrap.css');
+        wp_enqueue_style('admin_bootstrap');
     }
 
-    if (isset($_GET['page']) && $_GET['page'] == 'bootless') {
+    if (isset($_GET['page']) && substr($_GET['page'], 0, 8) == 'bootless') {
         add_action('admin_print_scripts', 'bootless_admin_scripts');
         add_action('admin_print_styles', 'bootless_admin_styles');
     }
