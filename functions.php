@@ -80,21 +80,12 @@ function bootless_comments_number($count) {
     }
 }
 
-/* Bootless Functions */
-
 function bootless_scripts() {
     wp_enqueue_style('bootless', get_template_directory_uri() . '/css/bootstrap.css');
     wp_enqueue_script('bootstrap', get_template_directory_uri() . '/vendor/twbs/bootstrap/dist/js/bootstrap.min.js');
-    //wp_enqueue_script( 'script-name', get_template_directory_uri() . '/js/example.js', array(), '1.0.0', true );
 }
 
 add_action('wp_enqueue_scripts', 'bootless_scripts');
-
-add_action('after_setup_theme', 'wpt_setup');
-
-function wpt_setup() {
-    register_nav_menu('primary', __('Primary navigation', 'wptuts'));
-}
 
 require_once __DIR__ . DIRECTORY_SEPARATOR . 'lib' . DIRECTORY_SEPARATOR . 'wp_bootstrap_navwalker.php';
 
@@ -109,28 +100,28 @@ if (is_admin()) {
         add_submenu_page('bootless', 'Customize Bootstrap', 'Customize Bootstrap', $capability, 'bootless_variables', [$Controller, 'variables']);
     }
 
-    function my_admin_scripts() {
+    function bootless_admin_scripts() {
         wp_enqueue_script('media-upload');
         wp_enqueue_script('thickbox');
         wp_register_script('my-upload', get_template_directory_uri() . '/admin/script.js', array('jquery', 'media-upload', 'thickbox'));
         wp_enqueue_script('my-upload');
     }
 
-    function my_admin_styles() {
+    function bootless_admin_styles() {
         wp_enqueue_style('thickbox');
     }
 
     if (isset($_GET['page']) && $_GET['page'] == 'bootless') {
-        add_action('admin_print_scripts', 'my_admin_scripts');
-        add_action('admin_print_styles', 'my_admin_styles');
+        add_action('admin_print_scripts', 'bootless_admin_scripts');
+        add_action('admin_print_styles', 'bootless_admin_styles');
     }
 }
 
-function boolChecked($bool) {
+function bootless_checked($bool) {
     return ($bool) ? 'checked' : '';
 }
 
-function boolSelected($bool) {
+function bootless_selected($bool) {
     return ($bool) ? 'selected' : '';
 }
 

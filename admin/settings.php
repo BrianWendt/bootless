@@ -14,7 +14,7 @@
                     <select name="option[nav_position]" class="form-control">
                         <?php
                         foreach (Bootless::$nav_positions as $position => $label) {
-                            echo '<option value="' . $position . '" ' . boolSelected(Bootless::option('nav_position') == $position) . '>' . $label . '</option>';
+                            echo '<option value="' . $position . '" ' . bootless_selected(Bootless::option('nav_position') == $position) . '>' . $label . '</option>';
                         }
                         ?>
                     </select>
@@ -29,7 +29,7 @@
                     <select name="option[nav_mode]" class="form-control">
                         <?php
                         foreach (Bootless::$nav_modes as $mode => $label) {
-                            echo '<option value="' . $mode . '" ' . boolSelected(Bootless::option('nav_mode') == $mode) . '>' . $label . '</option>';
+                            echo '<option value="' . $mode . '" ' . bootless_selected(Bootless::option('nav_mode') == $mode) . '>' . $label . '</option>';
                         }
                         ?>
                     </select>
@@ -95,7 +95,7 @@
                     <select name="option[featured_position]" class="form-control">
                         <?php
                         foreach (Bootless::$featured_positions as $featured_position => $label) {
-                            echo '<option value="' . $featured_position . '" ' . boolSelected(Bootless::option('featured_position') == $mode) . '>' . $label . '</option>';
+                            echo '<option value="' . $featured_position . '" ' . bootless_selected(Bootless::option('featured_position') == $mode) . '>' . $label . '</option>';
                         }
                         ?>
                     </select>
@@ -107,10 +107,10 @@
                 </label>
                 <div class="col-md-4 col-sm-9">
                     <label class="radio-inline">
-                        <input type="radio" name="option[featured_index]" value="1" <?php echo boolChecked(Bootless::option('featured_index') == 1) ?> /> Enabled
+                        <input type="radio" name="option[featured_index]" value="1" <?php echo bootless_checked(Bootless::option('featured_index') == 1) ?> /> Enabled
                     </label>
                     <label class="radio-inline">
-                        <input type="radio" name="option[featured_index]" value="0" <?php echo boolChecked(Bootless::option('featured_index') != 1) ?> /> Disabled
+                        <input type="radio" name="option[featured_index]" value="0" <?php echo bootless_checked(Bootless::option('featured_index') != 1) ?> /> Disabled
                     </label>
                 </div>
             </div>
@@ -120,10 +120,10 @@
                 </label>
                 <div class="col-md-4 col-sm-9">
                     <label class="radio-inline">
-                        <input type="radio" name="option[featured_single]" value="1" <?php echo boolChecked(Bootless::option('featured_single') == 1) ?> /> Enabled
+                        <input type="radio" name="option[featured_single]" value="1" <?php echo bootless_checked(Bootless::option('featured_single') == 1) ?> /> Enabled
                     </label>
                     <label class="radio-inline">
-                        <input type="radio" name="option[featured_single]" value="0" <?php echo boolChecked(Bootless::option('featured_single') != 1) ?> /> Disabled
+                        <input type="radio" name="option[featured_single]" value="0" <?php echo bootless_checked(Bootless::option('featured_single') != 1) ?> /> Disabled
                     </label>
                 </div>
             </div>
