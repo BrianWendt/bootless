@@ -9,9 +9,9 @@
     </head>
     <body <?php body_class(); ?>>
         <div id="wrapper" class="<?php echo (strpos(Bootless::option('nav_position'), 'sticky') !== false) ? 'nav_sticky' : '' ?>">
-            <?php if (strpos(Bootless::option('nav_position'), 'top') !== false) include Bootless::element('header', 'main-menu'); ?>
+            <?php if (strpos(Bootless::option('nav_position'), 'top') !== false) get_template_part('header', 'main-menu'); ?>
             <header id="header" role="banner" class="container">
-                <?php include Bootless::element('header', 'branding'); ?>
+                <?php get_template_part('header', 'branding'); ?>
             </header>
-            <?php if (Bootless::option('nav_position') == 'branding') include Bootless::element('header', 'main-menu'); ?>
+            <?php if (Bootless::option('nav_position') == 'branding') get_template_part('header', 'main-menu'); ?>
             <div id="container" class="container">

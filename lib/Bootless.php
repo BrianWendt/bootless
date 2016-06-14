@@ -5,10 +5,6 @@ class Bootless {
     static $options = null;
     static $variables = null;
 
-    static function element($type, $name) {
-        return BOOTLESS . 'elements' . DS . $type . DS . $name . '.php';
-    }
-
     static function option($name, $default = '') {
         $options = self::options();
         return isset($options[$name]) ? $options[$name] : self::optionDefault($name, $default);
