@@ -45,22 +45,6 @@
                 <p class="help-block col-md-6 col-sm-12">Leave blank to disable Branding in the Navigation Bar. This field accepts HTML.</p>
             </div>
             <div class="clearfix"></div>
-
-            
-            <h2>Header Branding</h2>
-            <div class="form-group">
-                <label class="control-label col-md-2 col-sm-3">Branding Image</label>
-                <div class="col-md-4 col-sm-9">
-                    <div class="input-group">
-                        <input id="branding_image" type="text" name="option[branding_image]" value="<?php echo Bootless::option('branding_image') ?>" class="form-control"/>
-                        <div class="input-group-btn">
-                            <input id="upload_image_button" class="upload-button btn btn-primary" type="button" value="Upload Image" data-target="#branding_image" />
-                        </div>
-                    </div>
-                </div>
-                <p class="help-block col-md-6 col-sm-12">Enter an URL or upload an image for the banner. Leave blank to use the default header.</p>
-            </div>
-
             
             <h2>Layout Settings</h2>
             <p class="help-block">

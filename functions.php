@@ -6,6 +6,7 @@ add_action('after_setup_theme', 'bootless_setup');
 $content_width = 848;
 
 function bootless_setup() {
+    global $content_width;
     load_theme_textdomain('bootless', get_template_directory() . '/languages');
     add_theme_support('title-tag');
     add_theme_support('automatic-feed-links');
@@ -13,9 +14,17 @@ function bootless_setup() {
     register_nav_menus(
             array('main-menu' => __('Main Menu', 'bootless'))
     );
+    
+    $custom_header = array(
+        'flex-width' => true,
+        'width' => $content_width,
+        'flex-height' => true,
+        'height' => 200
+    );
+    add_theme_support('custom-header', $custom_header);
 }
 
-add_image_size('index-featured', $content_width, ($content_width/3), array('center', 'center'));
+add_image_size('index-featured', $content_width, ($content_width / 3), array('center', 'center'));
 add_image_size('single-featured', $content_width, null);
 
 add_action('wp_enqueue_scripts', 'bootless_load_scripts');

@@ -1,7 +1,7 @@
 <section id="branding">
-    <?php if (Bootless::option('branding_image')) { ?>
+    <?php if (has_header_image()) { ?>
         <a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_html(get_bloginfo('name')); ?>" rel="home">
-            <img src="<?php echo Bootless::option('branding_image') ?>" class="img-responsive" />
+            <img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="<?php echo esc_html(get_bloginfo('name')); ?>" class="img-responsive" />
         </a>
     <?php } else { ?>
         <h1 id="site-title">
