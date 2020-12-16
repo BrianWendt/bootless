@@ -1,3 +1,5 @@
+Not maintainted; greatly out of date.
+
 # Bootless WordPress Theme
 This theme utilizes Twitter [Bootstrap](http://getbootstrap.com) to provide a
 easy to customize solution to front-end developers. Bootless is not intended for
